@@ -5,10 +5,7 @@ let todos = [
 ];
 
 const toggleCompletedById = (todos, id) =>
-  todos.map(todo => {
-    todo.completed = todo.id === id ? !todo.completed : todo.completed;
-    return todo;
-  });
+  todos.map(todo => (todo.id === id ? { ...todo, completed: !todo.completed } : todo));
 
 todos = toggleCompletedById(todos, 2);
 console.log(todos);

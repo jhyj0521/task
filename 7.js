@@ -4,11 +4,7 @@ let todos = [
   { id: 1, content: 'Javascript', completed: false },
 ];
 
-const toggleCompletedAll = todos =>
-  todos.map(todo => {
-    todo.completed = true;
-    return todo;
-  });
+const toggleCompletedAll = todos => todos.map(todo => ({ ...todo, completed: true }));
 
 todos = toggleCompletedAll(todos);
 console.log(todos);
